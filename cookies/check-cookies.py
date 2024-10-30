@@ -1,4 +1,4 @@
-## a basic program that takes in a webpage, scrapes it content, and checks if cookies
+## a basic program that takes in a webpage, scrapes its content, and checks if cookies
 ## are used as a user authentication method
 
 ## ---------------------------------------------------------------- ##
