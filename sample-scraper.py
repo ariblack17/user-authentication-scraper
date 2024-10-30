@@ -1,9 +1,8 @@
+## a simple web scraper demo that illustrates basic use of selenium
 
 from selenium import webdriver                  ## to control the browser
 from selenium.webdriver.common.keys import Keys ## to simulate key presses
 from selenium.webdriver.common.by import By     ## to locate elements within a document
-
-
 
 ## create a web driver instance (only few browsers are supported)
 driver = webdriver.Chrome()     ## opens a Chrome browser window
@@ -12,7 +11,7 @@ driver = webdriver.Chrome()     ## opens a Chrome browser window
 driver.get("https://www.python.org")    ## waits for the page to load completely
 
 ## check page title
-print(f'page title: {driver.title}') 
+print(f'page title: {driver.title}')    ## note: not all pages have titles
 assert "Python" in driver.title
 
 ## interact with the search bar
