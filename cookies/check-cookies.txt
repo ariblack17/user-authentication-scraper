@@ -1,3 +1,3 @@
-https://profile.callofduty.com/cdl/login
-{'domain': '.callofduty.com', 'httpOnly': False, 'name': 'XSRF-TOKEN', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'nhoEXS18iMRo_lQw_h6W5KRhGr71f0JrgZP7NzKNpwsykEG5oXcIme3QB3TudXPO'}
-{'domain': '.callofduty.com', 'httpOnly': False, 'name': 'ACT_SSO_LOCALE', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en_US'}
+https://www.activision.com/
+{'domain': '.activision.com', 'httpOnly': False, 'name': 'XSRF-TOKEN', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'fbjgcjHa-sblqAwq_bz2eMTvIh1Ib4yClIx7zVNOvgaeklF8e6PvsurE3Q0QtxXM'}
+{'domain': '.activision.com', 'httpOnly': False, 'name': 'ACT_SSO_LOCALE', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'en_US'}

@@ -29,7 +29,7 @@ def parse_cookies():
 def write_file():
     ''' writes website and cookies to a txt file '''
 
-    with open('check-cookies.txt', 'w') as f:
+    with open('./cookies/check-cookies.txt', 'w') as f: ## if running from root
         f.write(f'{website}\n')         ## website url header
         for cookie in auth_cookies:
             f.write(f'{cookie}\n')      ## cookies
@@ -40,7 +40,8 @@ def write_file():
 driver = webdriver.Chrome()     ## opens a Chrome browser window
 
 ## other variables
-website = 'https://profile.callofduty.com/cdl/login'    ## site that has cookies/tokens
+# website = 'https://profile.callofduty.com/cdl/login'    ## site that has cookies/tokens
+website = 'https://www.activision.com/'                 ## site that has cookies/tokens
 website2 = "https://www.python.org"
 
 ## load a website
