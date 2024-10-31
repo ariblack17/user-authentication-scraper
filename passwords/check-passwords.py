@@ -16,17 +16,50 @@ def write_file(website):
     with open('./passwords/check-passwords.txt', 'w') as f: ## if running from root
         f.write(f'{website}\n')         ## website url header
         for link in login_links:
-            f.write(f'{link}\n')      ## links
+            f.write(f'{link}\n')        ## links
+
 
 ## helper function
 def get_write_html():
     ''' stores html source file locally '''
 
     html = driver.page_source
-
     with open('./passwords/page.html', 'w') as f: ## if running from root
         f.write(html)
+
+
+## helper function
+def get_login_links(by, value):
+    ''' finds and returns matching login-related links on the web page '''
+
+    login_links = []
+    login_terms = {'login', 'log in', 'signin', 'sign in'}
+
+    ## get all links
+    links = driver.find_elements(by, value)              
+    if len(links) > 0: print(f'{len(links)} links found')
+    for link in links:
+        url = link.get_attribute('href')                        ## isolate the url
+        if url and any(term in url for term in login_terms):    ## append only login links
+            login_links.append(url)
+
+    return login_links
+
+## helper function
+def find_login_field(by):
+    ''' finds matching login-related fields on the web page, returns True if found '''
+
+    username_words = {'username', 'accountName', 'loginform', 'userid', 
+                  'user', 'acctName', 'login'}
     
+    ## look for username- and login-related words on the web page
+    for word in username_words:
+        username = driver.find_elements(by, word)
+        if len(username) > 0:
+            print(f'found login field -- password based authentication detected')
+            return True
+    
+    return False
 
 
 ## ---------------------------------------------------------------- ##
@@ -43,39 +76,28 @@ website3 = 'https://www.python.org'
 website4 = 'https://www.ebay.com/'
 
 ## choose a site for testing
-website = website2
+website = website1
 
 ## load a website
 driver.get(website)
 print(f'url: {driver.current_url}')
 
-login_links = []
-login_terms = {'login', 'log in', 'signin', 'sign in'}
+
+## -- finding links to a login page -- ##
 
 
 ## get all links (by tag name)
-links = driver.find_elements(By.TAG_NAME, "a")              ## <a> tag for links
-if len(links) > 0: print(f'{len(links)} links found')
-for link in links:
-    url = link.get_attribute('href')                        ## isolate the url
-    if url and any(term in url for term in login_terms):    ## append only login links
-        login_links.append(url)
-
+login_links = get_login_links(By.TAG_NAME, 'a')
 
 ## get all links (by class name, if tag name did not work)
-if len(login_links) == 0:
-    links = driver.find_elements(By.CLASS_NAME, "a")              ## <a> tag for links
-    if len(links) > 0: print(f'{len(links)} links found')
-    for link in links:
-        url = link.get_attribute('href')                        ## isolate the url
-        if url and any(term in url for term in login_terms):    ## append only login links
-            login_links.append(url)
-    print(f'{len(login_links)} login links found')
-else:
-    print(f'{len(login_links)} login links found')
+if len(login_links) == 0: login_links = get_login_links(By.CLASS_NAME, 'a')
+print(f'{len(login_links)} login links found')
 
-## write to file
+## write links to file
 # write_file(website)
+
+
+## -- navigating to the login page -- ##
 
 
 ## click on the first login link
@@ -85,53 +107,18 @@ if login_links:
     print(f'new url: {driver.current_url}')
 
 
+## -- finding a username/password field -- ##
+
+
 ## check if there's a uname/pswd field (indicates password based authentication)
 ## looking for an object/element with a matching id/class/name
+username_id = find_login_field(By.ID)   ## by id
+if not username_id: username_name = find_login_field(By.NAME) ## by name (if id didn't work)
+if not username_id and not username_name: username_class = find_login_field(By.CLASS_NAME)  ## by class name
 
-username_words = {'username', 'accountName', 'loginform', 'userid', 
-                  'user', 'acctName', 'login'}
-
-## locate by id
-login_form_id = driver.find_elements(By.ID, 'loginform')
-uname_id = driver.find_elements(By.ID, 'username')
-uname_id2 = driver.find_elements(By.ID, 'accountName')
-pswd_id = driver.find_elements(By.ID, 'password')
-
-username_id = None
-
-for word in username_words:
-    username_id = driver.find_elements(By.ID, word)
-    if len(username_id) > 0:
-        print(f'found login field -- password based authentication detected')
-        break
-
-## locate by name, if the above didn't work
-username_name = None
-
-if not username_id:
-    for word in username_words:
-        username_name = driver.find_elements(By.NAME, word)
-        if len(username_name) > 0:
-            print(f'found login field -- password based authentication detected')
-            break
-
-## locate by class, if the above didn't work
-username_class = None
-
-if not username_id and not username_name:
-    for word in username_words:
-        username_class = driver.find_elements(By.CLASS_NAME, word)
-        if len(username_class) > 0:
-            print(f'found login field -- password based authentication detected')
-            break
-
-
+## output negative results
 if not username_id and not username_name and not username_class:
     print(f'no login field detected')
-
-
-
-
 
 
 ## close the tab
