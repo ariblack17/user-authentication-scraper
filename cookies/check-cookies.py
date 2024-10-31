@@ -57,6 +57,10 @@ auth_cookies = parse_cookies()
 ## write to txt file
 write_file()
 
+
+## -- program exit -- ##
+
+
 ## close the tab
 driver.close()
 

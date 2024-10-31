@@ -111,7 +111,6 @@ if login_links:
     print(f'new url: {driver.current_url}')
 
 
-
 ## -- finding a captcha -- ##
 
 ## check if there's a captcha (by id)
@@ -121,6 +120,8 @@ captcha_id = find_captcha()
 if not captcha_id:
     print(f'no captcha detected')
 
+
+## -- program exit -- ##
 
 
 ## close the tab

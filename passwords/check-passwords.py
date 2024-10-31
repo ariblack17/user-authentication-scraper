@@ -121,6 +121,9 @@ if not username_id and not username_name and not username_class:
     print(f'no login field detected')
 
 
+## -- program exit -- ##
+
+
 ## close the tab
 driver.close()
 
