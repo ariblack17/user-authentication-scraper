@@ -38,12 +38,12 @@ options.add_argument('--enable-javascript')
 
 ## other variables
 website1 = 'https://www.activision.com/'                 
-website2 = 'https://www.formula1.com/'      ## broken, not sure why
-website3 = "https://www.python.org"
+website2 = 'https://www.formula1.com/'      ## broken, since its html structure is weird
+website3 = 'https://www.python.org'
 website4 = 'https://www.ebay.com/'
 
 ## choose a site for testing
-website = website4
+website = website2
 
 ## load a website
 driver.get(website)
@@ -55,7 +55,7 @@ login_terms = {'login', 'log in', 'signin', 'sign in'}
 
 ## get all links (by tag name)
 links = driver.find_elements(By.TAG_NAME, "a")              ## <a> tag for links
-print(f'{len(links)} links found')
+if len(links) > 0: print(f'{len(links)} links found')
 for link in links:
     url = link.get_attribute('href')                        ## isolate the url
     if url and any(term in url for term in login_terms):    ## append only login links
@@ -65,7 +65,7 @@ for link in links:
 ## get all links (by class name, if tag name did not work)
 if len(login_links) == 0:
     links = driver.find_elements(By.CLASS_NAME, "a")              ## <a> tag for links
-    print(f'{len(links)} links found')
+    if len(links) > 0: print(f'{len(links)} links found')
     for link in links:
         url = link.get_attribute('href')                        ## isolate the url
         if url and any(term in url for term in login_terms):    ## append only login links
@@ -75,34 +75,61 @@ else:
     print(f'{len(login_links)} login links found')
 
 ## write to file
-write_file(website)
+# write_file(website)
 
 
 ## click on the first login link
-login_link = login_links[0]
-driver.get(login_link)
-print(f'new url: {driver.current_url}')
+if login_links: 
+    login_link = login_links[0]
+    driver.get(login_link)
+    print(f'new url: {driver.current_url}')
 
 
 ## check if there's a uname/pswd field (indicates password based authentication)
+## looking for an object/element with a matching id/class/name
+
+username_words = {'username', 'accountName', 'loginform', 'userid', 
+                  'user', 'acctName', 'login'}
+
+## locate by id
+login_form_id = driver.find_elements(By.ID, 'loginform')
+uname_id = driver.find_elements(By.ID, 'username')
+uname_id2 = driver.find_elements(By.ID, 'accountName')
+pswd_id = driver.find_elements(By.ID, 'password')
+
+username_id = None
+
+for word in username_words:
+    username_id = driver.find_elements(By.ID, word)
+    if len(username_id) > 0:
+        print(f'found login field -- password based authentication detected')
+        break
+
+## locate by name, if the above didn't work
+username_name = None
+
+if not username_id:
+    for word in username_words:
+        username_name = driver.find_elements(By.NAME, word)
+        if len(username_name) > 0:
+            print(f'found login field -- password based authentication detected')
+            break
+
+## locate by class, if the above didn't work
+username_class = None
+
+if not username_id and not username_name:
+    for word in username_words:
+        username_class = driver.find_elements(By.CLASS_NAME, word)
+        if len(username_class) > 0:
+            print(f'found login field -- password based authentication detected')
+            break
 
 
+if not username_id and not username_name and not username_class:
+    print(f'no login field detected')
 
 
-
-
-## locate and click on login link
-# driver.find_element(By.PARTIAL_LINK_TEXT, 'Login').click()
-
-# driver.find_element(By.LINK_TEXT, 'Login').click()
-
-# login_link = driver.find_element(By.LINK_TEXT, "Login")
-# login_link = driver.find_element(By.PARTIAL_LINK_TEXT, "e")
-# print()
-# print(login_link)
-# login_link.click()
-
-# print(f'new url: {driver.current_url}')
 
 
 
