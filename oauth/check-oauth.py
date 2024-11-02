@@ -56,7 +56,26 @@ def find_login_field(by):
 ## helper function
 def find_oauth():
     ''' finds matching  '''
-    pass
+    return find_providers()
+
+## helper function
+def find_providers():
+    ''' searches for common OAuth provider names, returns an array of all matching names '''
+
+    common_providers = {'google', 'facebook', 'twitter', 'github', 'linkedin'}
+    providers = {}
+
+    ## look for username- and login-related words on the web page
+    for provider in common_providers:
+        # provider_name = driver.find_elements(by, word)
+        # provider_name = driver.find_elements(By.XPATH, f"//a[contains(@href, '{provider}')  
+        if driver.find_elements(By.XPATH, f"//a[contains(@href, '{provider}') or contains(text(), '{provider.capitalize()}')]"): ## TODO: fix this, should be find_element or something
+            providers.add(provider)
+
+    if len(providers) > 0:
+        print(f'oauth provider found -- sso authentication detected')
+        
+    return providers
 
 
 ## ---------------------------------------------------------------- ##
@@ -104,10 +123,12 @@ if login_links:
 ## -- finding oauth -- ##
 
 ## check if there are any oauth options (by id)
-oauth_id = find_oauth() ## TODO: output all found oauth methods to text file?
+# oauth_id = find_oauth() ## TODO: output all found oauth methods to text file?
+oauth_providers = find_oauth() ## TODO: output all found oauth methods to text file?
 
 ## output negative results
-if not oauth_id:
+# if not oauth_id:
+if len(oauth_providers) == 0:
     print(f'no oauth options detected')
 
 
