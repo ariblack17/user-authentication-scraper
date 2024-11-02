@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys ## to simulate key presses
 from selenium.webdriver.common.by import By     ## to locate elements within a document
 
 ## create a web driver instance (only few browsers are supported)
-driver = webdriver.Chrome()     ## opens a Chrome browser window
+driver = webdriver.Safari()     ## opens a Safari browser window
 
 ## load a website
 driver.get("https://www.python.org")    ## waits for the page to load completely
