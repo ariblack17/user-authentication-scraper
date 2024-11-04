@@ -1,5 +1,6 @@
-## a basic program that takes in a webpage, scrapes its content, 
-## and checks if a password box is present in the html
+## a basic program that takes in a webpage, scrapes its content, navigates to the
+## login page, then checks if a captcha is present
+
 ## ---------------------------------------------------------------- ##
 
 ## imports 
@@ -13,24 +14,14 @@ from selenium.webdriver.common.by import By     ## to locate elements within a d
 def write_file(website):
     ''' writes website and login links to a txt file '''
 
-    with open('./passwords/check-passwords.txt', 'w') as f: ## if running from root
+    with open('./captcha/check_captcha.txt', 'w') as f: ## if running from root
         f.write(f'{website}\n')         ## website url header
         for link in login_links:
             f.write(f'{link}\n')        ## links
 
-
-## helper function
-def get_write_html():
-    ''' stores html source file locally '''
-
-    html = driver.page_source
-    with open('./passwords/page.html', 'w') as f: ## if running from root
-        f.write(html)
-
-
 ## helper function
 def get_login_links(by, value):
-    ''' finds and returns matching login-related links on the web page '''
+    ''' finds and returns matching login-related links on the web page (where a captcha may be)'''
 
     login_links = []
     login_terms = {'login', 'log in', 'signin', 'sign in'}
@@ -61,6 +52,22 @@ def find_login_field(by):
     
     return False
 
+## helper function
+def find_captcha():
+    ''' finds matching login-related fields on the web page, returns True if found '''
+
+    captcha_words = {'recaptcha', 'captcha'}
+    
+    ## look for username- and login-related words on the web page
+    for word in captcha_words:
+        ## check if id contains word anywhere within the string
+        captcha = driver.find_elements(By.CSS_SELECTOR, f'[id*={word}]')    
+        if len(captcha) > 0:
+            print(f'found captcha -- captcha authentication detected')
+            return True
+    
+    return False
+
 
 ## ---------------------------------------------------------------- ##
 
@@ -76,7 +83,7 @@ website3 = 'https://www.python.org'
 website4 = 'https://www.ebay.com/'
 
 ## choose a site for testing
-website = website1
+website = website4
 
 ## load a website
 driver.get(website)
@@ -93,9 +100,6 @@ login_links = get_login_links(By.TAG_NAME, 'a')
 if len(login_links) == 0: login_links = get_login_links(By.CLASS_NAME, 'a')
 print(f'{len(login_links)} login links found')
 
-## write links to file
-# write_file(website)
-
 
 ## -- navigating to the login page -- ##
 
@@ -107,18 +111,14 @@ if login_links:
     print(f'new url: {driver.current_url}')
 
 
-## -- finding a username/password field -- ##
+## -- finding a captcha -- ##
 
-
-## check if there's a uname/pswd field (indicates password based authentication)
-## looking for an object/element with a matching id/class/name
-username_id = find_login_field(By.ID)   ## by id
-if not username_id: username_name = find_login_field(By.NAME) ## by name (if id didn't work)
-if not username_id and not username_name: username_class = find_login_field(By.CLASS_NAME)  ## by class name
+## check if there's a captcha (by id)
+captcha_id = find_captcha()
 
 ## output negative results
-if not username_id and not username_name and not username_class:
-    print(f'no login field detected')
+if not captcha_id:
+    print(f'no captcha detected')
 
 
 ## -- program exit -- ##

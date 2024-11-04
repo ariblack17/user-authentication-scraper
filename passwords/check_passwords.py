@@ -1,6 +1,5 @@
-## a basic program that takes in a webpage, scrapes its content, navigates to the
-## login page, then checks if the user can sign in via OAuth
-
+## a basic program that takes in a webpage, scrapes its content, 
+## and checks if a password box is present in the html
 ## ---------------------------------------------------------------- ##
 
 ## imports 
@@ -11,20 +10,27 @@ from selenium.webdriver.common.by import By     ## to locate elements within a d
 ## ---------------------------------------------------------------- ##
 
 ## helper function
-def write_file(fido2):
+def write_file(website):
     ''' writes website and login links to a txt file '''
 
-    with open('./oauth/check-oauth.txt', 'w') as f: ## if running from root
+    with open('./passwords/check_passwords.txt', 'w') as f: ## if running from root
         f.write(f'{website}\n')         ## website url header
-        if fido2:
-            f.write(f'FIDO2')
-        for provider in providers:
-            f.write(f'{provider}\n')    ## providers
+        for link in login_links:
+            f.write(f'{link}\n')        ## links
+
+
+## helper function
+def get_write_html():
+    ''' stores html source file locally '''
+
+    html = driver.page_source
+    with open('./passwords/page.html', 'w') as f: ## if running from root
+        f.write(html)
 
 
 ## helper function
 def get_login_links(by, value):
-    ''' finds and returns matching login-related links on the web page (where sso may be)'''
+    ''' finds and returns matching login-related links on the web page '''
 
     login_links = []
     login_terms = {'login', 'log in', 'signin', 'sign in'}
@@ -56,51 +62,6 @@ def find_login_field(by):
     return False
 
 
-## helper function
-def find_oauth(by):
-    ''' finds matching  '''
-    return find_providers(by)
-
-## helper function
-def find_providers(by):
-    ''' searches for common OAuth provider names, returns an array of all matching names '''
-
-    common_providers = {'google', 'ggl', 'facebook', 'twitter', 'github', 'linkedin',
-                        'xbl', 'xbox', 'psn', 'playstation', 'battle', 'steam',
-                        'apple', 'appl'}
-
-    ## look for username- and login-related words on the web page
-    for provider in common_providers:
-        
-        ## check if href link includes provider name anywhere within the string
-        found_providers = driver.find_elements(By.CSS_SELECTOR, f'[{by}*={provider}]')
-        if found_providers: providers.append(provider)
-
-    if len(providers) > 0:
-        print(f'oauth provider found -- sso authentication detected')
-        
-    return providers
-
-def find_fido2():
-    ''' searches the page and returns True if FIDO2 is likely used for authentication '''
-
-    fido_words = {'passkey', 'passwordless', 'webauthn'}
-    methods = {'class', 'id', 'href'}
-    # methods = {By.CLASS_NAME, By.ID, By.PARTIAL_LINK_TEXT}
-
-    # look for fido-related words on the web page
-    for method in methods:
-        for word in fido_words:
-            ## check if any fido words in any id (using xpath, efficient)
-            if driver.find_elements(By.XPATH, f'//*[contains(@id, {word})]'):
-                print(f'found fido-related word -- fido authentication detected')
-                return True
-            
-    return False
-
-
-
-
 ## ---------------------------------------------------------------- ##
 
 ## create a web driver instance (only few browsers are supported)
@@ -112,14 +73,10 @@ options.add_argument('--enable-javascript')
 website1 = 'https://www.activision.com/'                 
 website2 = 'https://www.formula1.com/'      ## broken, since its html structure is weird
 website3 = 'https://www.python.org'
-website4 = 'https://www.ebay.com/'  ## doesn't always work, and only finds facebook
-                                    ## (^ broken when blocked by bot-detection)
-website5 = 'https://soundcloud.com/'
-website6 = 'https://bestbuy.com/'   ## has fido2
-providers = []
+website4 = 'https://www.ebay.com/'
 
 ## choose a site for testing
-website = website6
+website = website1
 
 ## load a website
 driver.get(website)
@@ -136,6 +93,9 @@ login_links = get_login_links(By.TAG_NAME, 'a')
 if len(login_links) == 0: login_links = get_login_links(By.CLASS_NAME, 'a')
 print(f'{len(login_links)} login links found')
 
+## write links to file
+# write_file(website)
+
 
 ## -- navigating to the login page -- ##
 
@@ -147,28 +107,18 @@ if login_links:
     print(f'new url: {driver.current_url}')
 
 
-## -- finding oauth -- ##
+## -- finding a username/password field -- ##
 
 
-## check if there are any oauth options (by id)
-oauth_providers = find_oauth('href') 
-if len(oauth_providers) == 0: 
-    oauth_providers = find_oauth('onclick')  ## try searching by id otherwise
-    oauth_providers = find_oauth('id')  ## try searching by id otherwise
-    # print('found oauth by id')
+## check if there's a uname/pswd field (indicates password based authentication)
+## looking for an object/element with a matching id/class/name
+username_id = find_login_field(By.ID)   ## by id
+if not username_id: username_name = find_login_field(By.NAME) ## by name (if id didn't work)
+if not username_id and not username_name: username_class = find_login_field(By.CLASS_NAME)  ## by class name
 
 ## output negative results
-# if not oauth_id:
-if len(oauth_providers) == 0:
-    print(f'no oauth options detected')
-
-
-## -- finding oauth -- ##
-
-fido2 = find_fido2()
-
-## write to txt file
-write_file(fido2)
+if not username_id and not username_name and not username_class:
+    print(f'no login field detected')
 
 
 ## -- program exit -- ##
