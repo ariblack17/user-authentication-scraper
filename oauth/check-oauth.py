@@ -11,13 +11,16 @@ from selenium.webdriver.common.by import By     ## to locate elements within a d
 ## ---------------------------------------------------------------- ##
 
 ## helper function
-def write_file():
+def write_file(fido2):
     ''' writes website and login links to a txt file '''
 
     with open('./oauth/check-oauth.txt', 'w') as f: ## if running from root
         f.write(f'{website}\n')         ## website url header
+        if fido2:
+            f.write(f'FIDO2')
         for provider in providers:
             f.write(f'{provider}\n')    ## providers
+
 
 ## helper function
 def get_login_links(by, value):
@@ -33,7 +36,6 @@ def get_login_links(by, value):
         url = link.get_attribute('href')                        ## isolate the url
         if url and any(term in url for term in login_terms):    ## append only login links
             login_links.append(url)
-            print(url)
 
     return login_links
 
@@ -71,7 +73,6 @@ def find_providers(by):
     for provider in common_providers:
         
         ## check if href link includes provider name anywhere within the string
-        # found_providers = driver.find_elements(By.CSS_SELECTOR, f'[href*={provider}]')
         found_providers = driver.find_elements(By.CSS_SELECTOR, f'[{by}*={provider}]')
         if found_providers: providers.append(provider)
 
@@ -79,6 +80,25 @@ def find_providers(by):
         print(f'oauth provider found -- sso authentication detected')
         
     return providers
+
+def find_fido2():
+    ''' searches the page and returns True if FIDO2 is likely used for authentication '''
+
+    fido_words = {'passkey', 'passwordless', 'webauthn'}
+    methods = {'class', 'id', 'href'}
+    # methods = {By.CLASS_NAME, By.ID, By.PARTIAL_LINK_TEXT}
+
+    # look for fido-related words on the web page
+    for method in methods:
+        for word in fido_words:
+            ## check if any fido words in any id (using xpath, efficient)
+            if driver.find_elements(By.XPATH, f'//*[contains(@id, {word})]'):
+                print(f'found fido-related word -- fido authentication detected')
+                return True
+            
+    return False
+
+
 
 
 ## ---------------------------------------------------------------- ##
@@ -95,10 +115,11 @@ website3 = 'https://www.python.org'
 website4 = 'https://www.ebay.com/'  ## doesn't always work, and only finds facebook
                                     ## (^ broken when blocked by bot-detection)
 website5 = 'https://soundcloud.com/'
+website6 = 'https://bestbuy.com/'   ## has fido2
 providers = []
 
 ## choose a site for testing
-website = website1
+website = website6
 
 ## load a website
 driver.get(website)
@@ -128,6 +149,7 @@ if login_links:
 
 ## -- finding oauth -- ##
 
+
 ## check if there are any oauth options (by id)
 oauth_providers = find_oauth('href') 
 if len(oauth_providers) == 0: 
@@ -140,8 +162,13 @@ if len(oauth_providers) == 0:
 if len(oauth_providers) == 0:
     print(f'no oauth options detected')
 
+
+## -- finding oauth -- ##
+
+fido2 = find_fido2()
+
 ## write to txt file
-write_file()
+write_file(fido2)
 
 
 ## -- program exit -- ##
