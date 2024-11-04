@@ -29,7 +29,7 @@ def get_write_html():
 
 
 ## helper function
-def get_login_links(by, value):
+def get_login_links(driver, by, value):
     ''' finds and returns matching login-related links on the web page '''
 
     login_links = []
@@ -46,7 +46,7 @@ def get_login_links(by, value):
     return login_links
 
 ## helper function
-def find_login_field(by):
+def find_login_field(driver, by):
     ''' finds matching login-related fields on the web page, returns True if found '''
 
     username_words = {'username', 'accountName', 'loginform', 'userid', 
@@ -64,69 +64,70 @@ def find_login_field(by):
 
 ## ---------------------------------------------------------------- ##
 
-## create a web driver instance (only few browsers are supported)
-driver = webdriver.Safari()     ## opens a browser window
-options = webdriver.SafariOptions()
-options.add_argument('--enable-javascript')
+if __name__ == '__main__':
+    ## create a web driver instance (only few browsers are supported)
+    driver = webdriver.Safari()     ## opens a browser window
+    options = webdriver.SafariOptions()
+    options.add_argument('--enable-javascript')
 
-## other variables
-website1 = 'https://www.activision.com/'                 
-website2 = 'https://www.formula1.com/'      ## broken, since its html structure is weird
-website3 = 'https://www.python.org'
-website4 = 'https://www.ebay.com/'
+    ## other variables
+    website1 = 'https://www.activision.com/'                 
+    website2 = 'https://www.formula1.com/'      ## broken, since its html structure is weird
+    website3 = 'https://www.python.org'
+    website4 = 'https://www.ebay.com/'
 
-## choose a site for testing
-website = website1
+    ## choose a site for testing
+    website = website1
 
-## load a website
-driver.get(website)
-print(f'url: {driver.current_url}')
-
-
-## -- finding links to a login page -- ##
+    ## load a website
+    driver.get(website)
+    print(f'url: {driver.current_url}')
 
 
-## get all links (by tag name)
-login_links = get_login_links(By.TAG_NAME, 'a')
-
-## get all links (by class name, if tag name did not work)
-if len(login_links) == 0: login_links = get_login_links(By.CLASS_NAME, 'a')
-print(f'{len(login_links)} login links found')
-
-## write links to file
-# write_file(website)
+    ## -- finding links to a login page -- ##
 
 
-## -- navigating to the login page -- ##
+    ## get all links (by tag name)
+    login_links = get_login_links(driver, By.TAG_NAME, 'a')
+
+    ## get all links (by class name, if tag name did not work)
+    if len(login_links) == 0: login_links = get_login_links(driver, By.CLASS_NAME, 'a')
+    print(f'{len(login_links)} login links found')
+
+    ## write links to file
+    # write_file(website)
 
 
-## click on the first login link
-if login_links: 
-    login_link = login_links[0]
-    driver.get(login_link)
-    print(f'new url: {driver.current_url}')
+    ## -- navigating to the login page -- ##
 
 
-## -- finding a username/password field -- ##
+    ## click on the first login link
+    if login_links: 
+        login_link = login_links[0]
+        driver.get(login_link)
+        print(f'new url: {driver.current_url}')
 
 
-## check if there's a uname/pswd field (indicates password based authentication)
-## looking for an object/element with a matching id/class/name
-username_id = find_login_field(By.ID)   ## by id
-if not username_id: username_name = find_login_field(By.NAME) ## by name (if id didn't work)
-if not username_id and not username_name: username_class = find_login_field(By.CLASS_NAME)  ## by class name
-
-## output negative results
-if not username_id and not username_name and not username_class:
-    print(f'no login field detected')
+    ## -- finding a username/password field -- ##
 
 
-## -- program exit -- ##
+    ## check if there's a uname/pswd field (indicates password based authentication)
+    ## looking for an object/element with a matching id/class/name
+    username_id = find_login_field(driver, By.ID)   ## by id
+    if not username_id: username_name = find_login_field(driver, By.NAME) ## by name (if id didn't work)
+    if not username_id and not username_name: username_class = find_login_field(driver, By.CLASS_NAME)  ## by class name
+
+    ## output negative results
+    if not username_id and not username_name and not username_class:
+        print(f'no login field detected')
 
 
-## close the tab
-driver.close()
+    ## -- program exit -- ##
 
-## close the window
-# driver.quit()
+
+    ## close the tab
+    driver.close()
+
+    ## close the window
+    # driver.quit()
 

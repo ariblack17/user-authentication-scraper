@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By     ## to locate elements within a d
 ## ---------------------------------------------------------------- ##
 
 ## helper function
-def parse_cookies():
+def parse_cookies(cookies):
     ''' returns an array of cookies/tokens likely used for authentication '''
 
     auth_cookies = []                       ## array of authentication cookies/tokens
@@ -36,34 +36,35 @@ def write_file():
 
 ## ---------------------------------------------------------------- ##
 
-## create a web driver instance (only few browsers are supported)
-driver = webdriver.Safari()     ## opens a Safari browser window
+if __name__ == '__main__':
+    ## create a web driver instance (only few browsers are supported)
+    driver = webdriver.Safari()     ## opens a Safari browser window
 
-## other variables
-# website = 'https://profile.callofduty.com/cdl/login'    ## site that has cookies/tokens
-website = 'https://www.activision.com/'                 ## site that has cookies/tokens
-website2 = "https://www.python.org"
+    ## other variables
+    # website = 'https://profile.callofduty.com/cdl/login'    ## site that has cookies/tokens
+    website = 'https://www.activision.com/'                 ## site that has cookies/tokens
+    website2 = "https://www.python.org"
 
-## load a website
-driver.get(website)
+    ## load a website
+    driver.get(website)
 
-## get cookies
-cookies = driver.get_cookies()
-print(f'\nfound {len(cookies)} cookies for {website}')
+    ## get cookies
+    cookies = driver.get_cookies()
+    print(f'\nfound {len(cookies)} cookies for {website}')
 
-## parse cookies (not all cookies are for authentication)
-auth_cookies = parse_cookies()
+    ## parse cookies (not all cookies are for authentication)
+    auth_cookies = parse_cookies(cookies)
 
-## write to txt file
-write_file()
-
-
-## -- program exit -- ##
+    ## write to txt file
+    write_file()
 
 
-## close the tab
-driver.close()
+    ## -- program exit -- ##
 
-## close the window
-# driver.quit()
+
+    ## close the tab
+    driver.close()
+
+    ## close the window
+    # driver.quit()
 

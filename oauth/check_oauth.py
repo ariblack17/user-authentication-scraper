@@ -57,12 +57,12 @@ def find_login_field(by):
 
 
 ## helper function
-def find_oauth(by):
+def find_oauth(driver, providers, by):
     ''' finds matching  '''
-    return find_providers(by)
+    return find_providers(driver, [], by)
 
 ## helper function
-def find_providers(by):
+def find_providers(driver, providers, by):
     ''' searches for common OAuth provider names, returns an array of all matching names '''
 
     common_providers = {'google', 'ggl', 'facebook', 'twitter', 'github', 'linkedin',
@@ -81,7 +81,7 @@ def find_providers(by):
         
     return providers
 
-def find_fido2():
+def find_fido2(driver):
     ''' searches the page and returns True if FIDO2 is likely used for authentication '''
 
     fido_words = {'passkey', 'passwordless', 'webauthn'}
@@ -105,84 +105,85 @@ def find_fido2():
 
 ## ---------------------------------------------------------------- ##
 
-## create a web driver instance (only few browsers are supported)
-driver = webdriver.Safari()     ## opens a browser window
-options = webdriver.SafariOptions()
-options.add_argument('--enable-javascript')
+if __name__ == '__main__':
+    ## create a web driver instance (only few browsers are supported)
+    driver = webdriver.Safari()     ## opens a browser window
+    options = webdriver.SafariOptions()
+    options.add_argument('--enable-javascript')
 
-## other variables
-website1 = 'https://www.activision.com/'                 
-website2 = 'https://www.formula1.com/'      ## broken, since its html structure is weird
-website3 = 'https://www.python.org'
-website4 = 'https://www.ebay.com/'  ## doesn't always work, and only finds facebook
-                                    ## (^ broken when blocked by bot-detection)
-website5 = 'https://soundcloud.com/'
-website6 = 'https://bestbuy.com/'   ## has fido2
-website7 = 'https://twitter.com/i/flow/login'   ## nav to login from home page is weird,
-                                                ## naming conventions are unconventional
-website8 = 'https://en.wikipedia.org/'
+    ## other variables
+    website1 = 'https://www.activision.com/'                 
+    website2 = 'https://www.formula1.com/'      ## broken, since its html structure is weird
+    website3 = 'https://www.python.org'
+    website4 = 'https://www.ebay.com/'  ## doesn't always work, and only finds facebook
+                                        ## (^ broken when blocked by bot-detection)
+    website5 = 'https://soundcloud.com/'
+    website6 = 'https://bestbuy.com/'   ## has fido2
+    website7 = 'https://twitter.com/i/flow/login'   ## nav to login from home page is weird,
+                                                    ## naming conventions are unconventional
+    website8 = 'https://en.wikipedia.org/'
 
-providers = []
+    providers = []
 
-## choose a site for testing
-website = website8
+    ## choose a site for testing
+    website = website8
 
-## load a website
-driver.get(website)
-print(f'url: {driver.current_url}')
-
-
-## -- finding links to a login page -- ##
+    ## load a website
+    driver.get(website)
+    print(f'url: {driver.current_url}')
 
 
-## get all links (by tag name)
-login_links = get_login_links(By.TAG_NAME, 'a')
-
-## get all links (by class name, if tag name did not work)
-if len(login_links) == 0: login_links = get_login_links(By.CLASS_NAME, 'a')
-print(f'{len(login_links)} login links found')
+    ## -- finding links to a login page -- ##
 
 
-## -- navigating to the login page -- ##
+    ## get all links (by tag name)
+    login_links = get_login_links(By.TAG_NAME, 'a')
+
+    ## get all links (by class name, if tag name did not work)
+    if len(login_links) == 0: login_links = get_login_links(By.CLASS_NAME, 'a')
+    print(f'{len(login_links)} login links found')
 
 
-## click on the first login link
-if login_links: 
-    login_link = login_links[0]
-    driver.get(login_link)
-    print(f'new url: {driver.current_url}')
+    ## -- navigating to the login page -- ##
 
 
-## -- finding oauth -- ##
+    ## click on the first login link
+    if login_links: 
+        login_link = login_links[0]
+        driver.get(login_link)
+        print(f'new url: {driver.current_url}')
 
 
-## check if there are any oauth options (by id)
-oauth_providers = find_oauth('href') 
-if len(oauth_providers) == 0: 
-    oauth_providers = find_oauth('onclick')  ## try searching by id otherwise
-    oauth_providers = find_oauth('id')  ## try searching by id otherwise
-    # print('found oauth by id')
-
-## output negative results
-# if not oauth_id:
-if len(oauth_providers) == 0:
-    print(f'no general sso options detected')
+    ## -- finding oauth -- ##
 
 
-## -- finding oauth -- ##
+    ## check if there are any oauth options (by id)
+    oauth_providers = find_oauth(driver, 'href') 
+    if len(oauth_providers) == 0: 
+        oauth_providers = find_oauth(driver, 'onclick')  ## try searching by id otherwise
+        oauth_providers = find_oauth(driver, 'id')  ## try searching by id otherwise
+        # print('found oauth by id')
 
-fido2 = find_fido2()
-
-## write to txt file
-write_file(fido2)
-
-
-## -- program exit -- ##
+    ## output negative results
+    # if not oauth_id:
+    if len(oauth_providers) == 0:
+        print(f'no general sso options detected')
 
 
-## close the tab
-driver.close()
+    ## -- finding oauth -- ##
 
-## close the window
-# driver.quit()
+    fido2 = find_fido2(driver)
+
+    ## write to txt file
+    write_file(fido2)
+
+
+    ## -- program exit -- ##
+
+
+    ## close the tab
+    driver.close()
+
+    ## close the window
+    # driver.quit()
 

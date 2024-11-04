@@ -53,7 +53,7 @@ def find_login_field(by):
     return False
 
 ## helper function
-def find_captcha():
+def find_captcha(driver):
     ''' finds matching login-related fields on the web page, returns True if found '''
 
     captcha_words = {'recaptcha', 'captcha'}
@@ -71,62 +71,63 @@ def find_captcha():
 
 ## ---------------------------------------------------------------- ##
 
-## create a web driver instance (only few browsers are supported)
-driver = webdriver.Safari()     ## opens a browser window
-options = webdriver.SafariOptions()
-options.add_argument('--enable-javascript')
+if __name__ == '__main__':
+    ## create a web driver instance (only few browsers are supported)
+    driver = webdriver.Safari()     ## opens a browser window
+    options = webdriver.SafariOptions()
+    options.add_argument('--enable-javascript')
 
-## other variables
-website1 = 'https://www.activision.com/'                 
-website2 = 'https://www.formula1.com/'      ## broken, since its html structure is weird
-website3 = 'https://www.python.org'
-website4 = 'https://www.ebay.com/'
+    ## other variables
+    website1 = 'https://www.activision.com/'                 
+    website2 = 'https://www.formula1.com/'      ## broken, since its html structure is weird
+    website3 = 'https://www.python.org'
+    website4 = 'https://www.ebay.com/'
 
-## choose a site for testing
-website = website4
+    ## choose a site for testing
+    website = website4
 
-## load a website
-driver.get(website)
-print(f'url: {driver.current_url}')
-
-
-## -- finding links to a login page -- ##
+    ## load a website
+    driver.get(website)
+    print(f'url: {driver.current_url}')
 
 
-## get all links (by tag name)
-login_links = get_login_links(By.TAG_NAME, 'a')
-
-## get all links (by class name, if tag name did not work)
-if len(login_links) == 0: login_links = get_login_links(By.CLASS_NAME, 'a')
-print(f'{len(login_links)} login links found')
+    ## -- finding links to a login page -- ##
 
 
-## -- navigating to the login page -- ##
+    ## get all links (by tag name)
+    login_links = get_login_links(By.TAG_NAME, 'a')
+
+    ## get all links (by class name, if tag name did not work)
+    if len(login_links) == 0: login_links = get_login_links(By.CLASS_NAME, 'a')
+    print(f'{len(login_links)} login links found')
 
 
-## click on the first login link
-if login_links: 
-    login_link = login_links[0]
-    driver.get(login_link)
-    print(f'new url: {driver.current_url}')
+    ## -- navigating to the login page -- ##
 
 
-## -- finding a captcha -- ##
-
-## check if there's a captcha (by id)
-captcha_id = find_captcha()
-
-## output negative results
-if not captcha_id:
-    print(f'no captcha detected')
+    ## click on the first login link
+    if login_links: 
+        login_link = login_links[0]
+        driver.get(login_link)
+        print(f'new url: {driver.current_url}')
 
 
-## -- program exit -- ##
+    ## -- finding a captcha -- ##
+
+    ## check if there's a captcha (by id)
+    captcha_id = find_captcha(driver)
+
+    ## output negative results
+    if not captcha_id:
+        print(f'no captcha detected')
 
 
-## close the tab
-driver.close()
+    ## -- program exit -- ##
 
-## close the window
-# driver.quit()
+
+    ## close the tab
+    driver.close()
+
+    ## close the window
+    # driver.quit()
 
