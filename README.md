@@ -19,3 +19,16 @@ Currently, each portion of the project is distinct and must be run on its own fr
 Therefore, for instance, if you would like to run a demo of the program that checks if a website has cookie- or token-based authentication methods enabled (by finding all authentication-based cookies and tokens), then you should run the script in `cookies/`. The program output will be located in `cookies/<file_name>.txt`.
 
 Note that the web pages being targeted by the scripts can be changed by manually changing the relevant variables in the code files. This will be modified and polished later, when the project is no longer under heavy development.
+
+## websites used for testing
+
+  *a (non-exhaustive) collection of web pages used throughout the development of this project for testing and benchmarks* 
+
+  - https://www.activision.com/
+  - https://www.formula1.com/   *-- cookies only (non-standard HTML structure)*
+  - https://www.python.org/
+  - https://www.ebay.com/
+  - https://soundcloud.com/
+  - https://bestbuy.com/    *-- FIDO2*
+  - https://twitter.com/i/flow/login *-- home page currently incompatible*
+  - https://en.wikipedia.org/
