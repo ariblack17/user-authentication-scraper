@@ -1,0 +1,526 @@
+Website: https://www.khanacademy.org/
+Login Link: https://www.khanacademy.org/login
+Captcha Status: No Captcha Found
+
+Website: https://www.edx.org/
+Login Link: https://authn.edx.org/login
+Captcha Status: No Captcha Found
+
+Website: https://www.coursera.org/
+Login Link: https://www.coursera.org/?authMode=login
+Captcha Status: Captcha Found
+
+Website: https://www.udemy.com/
+Login Link: https://www.udemy.com/join/login-popup/?locale=en_US&response_type=html&next=https%3A%2F%2Fwww.udemy.com%2F
+Captcha Status: No Captcha Found
+
+Website: https://www.futurelearn.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.open.edu/
+Captcha Status: No Captcha Found
+
+Website: https://www.classcentral.com/
+Login Link: https://www.classcentral.com/login
+Login Link: https://www.classcentral.com/login
+Captcha Status: No Captcha Found
+
+Website: https://ocw.mit.edu/
+Captcha Status: No Captcha Found
+
+Website: https://www.saylor.org/
+Login Link: https://learn.saylor.org/login/index.php?utm_source=nb&utm_medium=p&utm_campaign=Log%in
+Captcha Status: No Captcha Found
+
+Website: https://www.w3schools.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.codecademy.com/
+Login Link: https://www.codecademy.com/login
+Login Link: https://www.codecademy.com/login
+Captcha Status: Captcha Found
+
+Website: https://www.duolingo.com/
+Captcha Status: Captcha Found
+
+Website: https://www.hackerrank.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.brainpop.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.memrise.com/
+Login Link: https://app.memrise.com/signin
+Login Link: https://app.memrise.com/signin
+Login Link: https://app.memrise.com/signin
+Captcha Status: No Captcha Found
+
+Website: https://www.nationalgeographic.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.discoveryeducation.com/
+Login Link: https://app.discoveryeducation.com/learn/signin
+Login Link: https://app.discoveryeducation.com/learn/signin
+Captcha Status: No Captcha Found
+
+Website: https://www.unicef.org/
+Captcha Status: No Captcha Found
+
+Website: https://www.scientificamerican.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.ted.com/
+Captcha Status: Captcha Found
+
+Website: https://www.amazon.com/
+Login Link: https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+Login Link: https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+Login Link: https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_custrec_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+Captcha Status: No Captcha Found
+
+Website: https://www.ebay.com/
+Login Link: https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&sgfl=gh&ru=https%3A%2F%2Fwww.ebay.com%2F
+Login Link: https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&sgfl=gh&ru=ru
+Captcha Status: Captcha Found
+
+Website: https://www.etsy.com/
+Login Link: https://www.etsy.com/signin?from_page=https%3A%2F%2Fwww.etsy.com%2F&workflow=c3Vic2NyaWJlX3RvX2VtYWlsX2xpc3Q6bmV3X2F0X2V0c3k6MTczMzM0NTM1MzpjM2JiZTMzYzBmOWVlNzQ1ODhjNDM1NzZlMWYwNTIxNQ==
+Captcha Status: Captcha Found
+
+Website: https://www.walmart.com/
+Login Link: https://identity.walmart.com/account/login?client_id=5f3fb121-076a-45f6-9587-249f0bc160ff&redirect_uri=https%3A%2F%2Fwww.walmart.com%2Faccount%2FverifyToken&scope=openid+email+offline_access&tenant_id=elh9ie&state=%2F&code_challenge=renP6oRqSOoQYdk6jsZtnKCAK19d_-fCJmCxO9bOOiw
+Login Link: https://www.walmart.com/account/login?vid=oaoh&tid=0&returnUrl=%2Faccount%2Fdelete-account
+Captcha Status: Captcha Found
+
+Website: https://www.bestbuy.com/
+Login Link: https://www.bestbuy.com/identity/global/signin
+Login Link: https://www.bestbuy.com/identity/sso/signin?contextId=sso-visa&processIndicator=dashboard&source=fT4TCYlhM%2FBHt4GYEIyTpUXh8eOIYXDjvQ8brdIq%2BgjFKp0ZC2Aq%2BH81O%2Futk9NoztIKhuI3FqmuRt1rZid1%2Bw%3D%3D
+Login Link: https://www.bestbuy.com/identity/global/signin
+Captcha Status: Captcha Found
+
+Website: https://www.target.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.aliexpress.com/
+Login Link: https://login.aliexpress.com/seller.htm?return_url=https://gsp.aliexpress.com
+Captcha Status: No Captcha Found
+
+Website: https://www.homedepot.com/
+Login Link: https://www.homedepot.com/auth/view/signin?fromReminder=true
+Login Link: https://www.homedepot.com/auth/view/signin?redirect=/&ref=null
+Login Link: https://www.homedepot.com/auth/view/signin?redirect=/&ref=null
+Captcha Status: Captcha Found
+
+Website: https://www.wayfair.com/
+Login Link: https://www.wayfair.com/v/account/authentication/login?url=https%3A%2F%2Fwww.wayfair.com%2F&context=header_wayfair_my_account_menu
+Captcha Status: Captcha Found
+
+Website: https://www.nordstrom.com/
+Login Link: https://www.nordstrom.com/signin?cm_sp=SI_SP_A-_-SI_SP_B-_-SI_SP_C&origin=tab&ReturnURL=https%3A%2F%2Fwww.nordstrom.com%2F
+Login Link: https://www.nordstrom.com/signin/order-lookup
+Login Link: https://www.nordstrom.com/signin/order-lookup
+Captcha Status: No Captcha Found
+
+Website: https://www.costco.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.newegg.com/
+Login Link: https://secure.newegg.com/login/signin?nextpage=https%3A%2F%2Fwww.newegg.com%2F
+Login Link: https://secure.newegg.com/login/signin
+Login Link: https://secure.newegg.com/login/signin?nextpage=https%3A%2F%2Fsecure.newegg.com%2FwishList%2Fm
+Login Link: https://secure.newegg.com/login/signin?nextpage=https%3A%2F%2Fsecure.newegg.com%2Fpcbuilder%2Fm
+Login Link: https://secure.newegg.com/login/signin?nextpage=https%3A%2F%2Fsecure.newegg.com%2Fcompletedbuilds%2Fm
+Captcha Status: Captcha Found
+
+Website: https://www.zappos.com/
+Login Link: https://www.zappos.com/federated-login
+Login Link: https://www.zappos.com/federated-login
+Captcha Status: Captcha Found
+
+Website: https://www.asos.com/
+Login Link: https://auth.capitalone.co.uk/login?channel=asos#nlid=ww|credit+card|got+the+card+already?|sign+in+to+your+account
+Login Link: https://auth.capitalone.co.uk/login?channel=asos#nlid=mw|credit+card|got+the+card+already?|sign+in+to+your+account
+Captcha Status: No Captcha Found
+
+Website: https://www.overstock.com/
+Login Link: https://www.overstock.com/account/login
+Captcha Status: No Captcha Found
+
+Website: https://www.gap.com/
+Captcha Status: Captcha Found
+
+Website: https://www.shein.com/
+Login Link: https://us.shein.com/user/auth/login?direction=nav
+Captcha Status: No Captcha Found
+
+Website: https://www.lululemon.com/
+Login Link: https://shop.lululemon.com/account/login
+Login Link: https://shop.lululemon.com/account/login
+Login Link: https://shop.lululemon.com/account/login?mode=wishlist-landing&bvRedirectUrl=%2Faccount%2Fwishlist%3Fmode
+Login Link: https://shop.lululemon.com/account/login
+Login Link: https://shop.lululemon.com/account/login
+Login Link: https://shop.lululemon.com/account/login
+Captcha Status: No Captcha Found
+
+Website: https://www.shopify.com/
+Login Link: https://www.shopify.com/login?ui_locales=en
+Captcha Status: Captcha Found
+
+Website: https://www.wikipedia.org/
+Captcha Status: No Captcha Found
+
+Website: https://www.britannica.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.howstuffworks.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.healthline.com/
+Captcha Status: Captcha Found
+
+Website: https://www.webmd.com/
+Login Link: https://member.webmd.com/signin?appid=1&returl=https://www.webmd.com/default.htm
+Captcha Status: No Captcha Found
+
+Website: https://www.imdb.com/
+Login Link: https://pro.imdb.com/login/ap?u=/login/lwa&imdbPageAction=signUp&rf=cons_nb_hm&ref_=cons_nb_hm
+Login Link: https://www.imdb.com/registration/signin/?ref=nv_generic_lgin&u=%2F
+Login Link: https://www.imdb.com/registration/signin?ref_=signup_cm_nc_ca_btn&u=%2F
+Login Link: https://www.imdb.com/registration/signin?ref_=signup_cm_nc_ca&u=%2F
+Login Link: https://www.imdb.com/registration/signin/?ref_=reg_ftr&u=%2F
+Login Link: https://www.imdb.com/registration/signin/?ref_=reg_ftr&u=%2F
+Captcha Status: No Captcha Found
+
+Website: https://www.weather.com/
+Login Link: https://weather.com/login
+Captcha Status: No Captcha Found
+
+Website: https://www.quora.com/
+Captcha Status: Captcha Found
+
+Website: https://www.stackoverflow.com/
+Login Link: https://stackoverflow.com/users/login
+Login Link: https://stackoverflow.com/users/login?ssrc=site_switcher&returnurl=https%3a%2f%2fstackoverflow.com%2f
+Login Link: https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2f
+Captcha Status: No Captcha Found
+
+Website: https://www.snopes.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.dictionary.com/
+Captcha Status: Captcha Found
+
+Website: https://www.thesaurus.com/
+Captcha Status: Captcha Found
+
+Website: https://www.space.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.nasa.gov/
+Captcha Status: No Captcha Found
+
+Website: https://www.timeanddate.com/
+Login Link: https://www.timeanddate.com/custom/login.html
+Captcha Status: No Captcha Found
+
+Website: https://www.usgs.gov/
+Captcha Status: No Captcha Found
+
+Website: https://www.npr.org/
+Captcha Status: Captcha Found
+
+Website: https://www.cia.gov/the-world-factbook/
+Captcha Status: No Captcha Found
+
+Website: https://www.history.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.nytimes.com/
+Login Link: https://myaccount.nytimes.com/auth/login?response_type=cookie&client_id=vi&redirect_uri=https%3A%2F%2Fwww.nytimes.com%2Fsubscription%2Fonboarding-offer%3FcampaignId%3D7JFJX%26EXIT_URI%3Dhttps%253A%252F%252Fwww.nytimes.com%252F&asset=masthead
+Login Link: https://myaccount.nytimes.com/auth/login?response_type=cookie&client_id=vi_login_app&redirect_uri=https%3A%2F%2Fwww.nytimes.com%2Fsubscription%2Fonboarding-offer%3FcampaignId%3D7JFJX%26EXIT_URI%3Dhttps%253A%252F%252Fwww.nytimes.com%252F&asset=masthead
+Captcha Status: No Captcha Found
+
+Website: https://www.washingtonpost.com/
+Login Link: https://www.washingtonpost.com/subscribe/signin/?next_url=https%3A%2F%2Fwww.washingtonpost.com%2F&nid=top_pb_signin&arcId=&account_location=ONSITE_HEADER_HOMEPAGE&itid=nav_sign_in
+Captcha Status: No Captcha Found
+
+Website: https://www.theguardian.com/
+Login Link: https://profile.theguardian.com/signin?INTCMP=DOTCOM_NEWHEADER_SIGNIN&ABCMP=ab-sign-in&componentEventParams=componentType%3Didentityauthentication%26componentId%3Dguardian_signin_header
+Captcha Status: Captcha Found
+
+Website: https://www.bbc.com/news
+Captcha Status: No Captcha Found
+
+Website: https://www.cnn.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.reuters.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.aljazeera.com/
+Captcha Status: Captcha Found
+
+Website: https://www.nbcnews.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.abcnews.go.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.forbes.com/
+Captcha Status: Captcha Found
+
+Website: https://www.economist.com/
+Login Link: https://www.economist.com/api/auth/login
+Captcha Status: No Captcha Found
+
+Website: https://www.bloomberg.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.nationalgeographic.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.wsj.com/
+Login Link: https://www.wsj.com/client/login?target=https%3A%2F%2Fwww.wsj.com
+Login Link: https://www.wsj.com/client/login?target=https%3A%2F%2Fwww.wsj.com
+Login Link: https://www.wsj.com/client/login?target=%2F
+Login Link: https://wsjbg-adsmanager.com/?action=login
+Login Link: https://wsjbg-adsmanager.com/?action=login
+Login Link: https://www.wsj.com/client/login?target=%2F
+Captcha Status: No Captcha Found
+
+Website: https://www.huffpost.com/
+Login Link: https://login.huffpost.com/login?dest=https%3A%2F%2Fwww.huffpost.com%2F%3Fhp_auth_done%3D1&src=huffpost-nav-hp&ncid=huffpost_homepagena_ybf3wf01afo
+Login Link: https://login.huffpost.com/login?dest=https%3A%2F%2Fwww.huffpost.com%2F%3Fhp_auth_done%3D1&src=huffpost-nav-hp&ncid=huffpost_homepagena_ybf3wf01afo
+Login Link: https://login.huffpost.com/login?dest=https%3A%2F%2Fwww.huffpost.com%2F%3Fhp_auth_done%3D1
+Captcha Status: No Captcha Found
+
+Website: https://www.politico.com/
+Login Link: https://login.politico.com/?redirect=https%3A%2F%2Fwww.politico.com%2Fsettings
+Captcha Status: No Captcha Found
+
+Website: https://www.propublica.org/
+Captcha Status: Captcha Found
+
+Website: https://www.apnews.com/
+Login Link: https://apnews.com/article/national-signing-period-fb64d81c4693b9ac966a22d177c6904c
+Login Link: https://apnews.com/article/signing-day-college-football-b4f43daa625fcd896f6daeeb9c3288bf
+Captcha Status: Captcha Found
+
+Website: https://www.axios.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.vox.com/
+Login Link: https://www.vox.com/auth/login?redirectTo=%2F
+Login Link: https://www.vox.com/auth/login?redirectTo=%2F
+Captcha Status: No Captcha Found
+
+Website: https://www.chase.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.bankofamerica.com/
+Login Link: https://secure.bankofamerica.com/login/sign-in/signOnV2Screen.go
+Login Link: https://www.bankofamerica.com/sitemap/hub/signin.go?request_locale=en_US
+Login Link: https://secure.bankofamerica.com/login/enroll/entry/olbEnroll.go?reason=model_enroll&request_locale=en-us
+Login Link: https://secure.bankofamerica.com/login/sign-in/signOnV2Screen.go
+Login Link: https://secure.bankofamerica.com/login/enroll/entry/olbEnroll.go?request_locale=en_US
+Login Link: https://secure.bankofamerica.com/login/sign-in/signOnV2Screen.go?reason=securitycenter&version=21.09&screen=ProfileAndSettings:SecurityCenterHome&channel=desktop&cm_sp=MobileSecurity-_-NotAssigned-_-M1T0LT7101_YNISecurityMeter2023_YNICta
+Login Link: https://secure.bankofamerica.com/login/sign-in/signOnV2Screen.go?request_locale=en-us
+Captcha Status: No Captcha Found
+
+Website: https://www.wellsfargo.com/
+Login Link: https://connect.secure.wellsfargo.com/auth/login/present?origin=cob&LOB=CONS
+Login Link: https://connect.secure.wellsfargo.com/auth/login/present?origin=cob&LOB=CONS
+Captcha Status: Captcha Found
+
+Website: https://www.citi.com/
+Login Link: https://www.citi.com/personal-loans?affcode=CLN&intc=pil_borrow_globalnav_prelogin
+Login Link: https://www.citi.com/personal-loans?affcode=CPI&intc=pil_borrow_icon_prelogin
+Login Link: https://www.citi.com/personal-loans?affcode=CWF&intc=pil_borrow_footer_prelogin
+Captcha Status: No Captcha Found
+
+Website: https://www.usbank.com/
+Login Link: https://onlinebanking.usbank.com/auth/login/
+Login Link: https://onlinebanking.usbank.com/auth/login/
+Login Link: https://onlinebanking.usbank.com/auth/login/
+Login Link: https://onlinebanking.usbank.com/Auth/Login
+Captcha Status: No Captcha Found
+
+Website: https://www.capitalone.com/
+Login Link: https://verified.capitalone.com/auth/signin
+Login Link: https://verified.capitalone.com/auth/signin?Product=Card&Action=Pay
+Login Link: https://www.capitalone.com/cars/login/
+Login Link: https://autorefi.capitalone.com/login/
+Login Link: https://verified.capitalone.com/auth/signin
+Captcha Status: No Captcha Found
+
+Website: https://www.americanexpress.com/
+Login Link: https://www.americanexpress.com/en-us/account/at-work/login/?TARGET=https%3A%2F%2Fwww.americanexpress.com%2Fen-us%2Fat-work%2F&inav=us_menu_my_account_business_accounts_atwork
+Login Link: https://www.americanexpress.com/us/credit-cards/gcpadvantage/login/?eep=36021&channel=axpsite&intlink=us-CPS-PCACheader&inav=menu_cards_cs_personal_card_annual
+Login Link: https://www.americanexpress.com/en-us/account/login?inav=iNavLnkLog
+Login Link: https://www.americanexpress.com/en-us/account/at-work/login/?TARGET=https%3A%2F%2Fwww.americanexpress.com%2Fen-us%2Fat-work%2F&inav=us_menu_my_account_business_accounts_atwork
+Login Link: https://www.americanexpress.com/us/credit-cards/gcpadvantage/login/?eep=36021&channel=axpsite&intlink=us-CPS-PCACheader&inav=menu_cards_cs_personal_card_annual
+Login Link: https://www.americanexpress.com/en-us/account/at-work/login/?TARGET=https%3A%2F%2Fwww.americanexpress.com%2Fen-us%2Fat-work%2F&inav=us_menu_my_account_business_accounts_atwork
+Login Link: https://www.americanexpress.com/us/credit-cards/gcpadvantage/login/?eep=36021&channel=axpsite&intlink=us-CPS-PCACheader&inav=menu_cards_cs_personal_card_annual
+Captcha Status: No Captcha Found
+
+Website: https://www.discover.com/
+Login Link: https://www.discover.com/?ICMPGN=SA_LOGIN_OVERLAY_HOME
+Login Link: https://www.discover.com/forgot-info/?ICMPGN=SA_LOGIN_OVERLAY_FORGOT
+Login Link: https://www.discovercard.com/cardmembersvcs/acctxfer/app/Home?ICMPGN=SA_LOGIN_OVERLAY_ACTIVATE
+Login Link: https://www.discover.com/register-account/?ICMPGN=SA_LOGIN_OVERLAY_REGISTER
+Captcha Status: No Captcha Found
+
+Website: https://www.barclays.com/
+Login Link: https://bank.barclays.co.uk/olb/authlogin/loginAppContainer.do
+Captcha Status: No Captcha Found
+
+Website: https://www.hsbc.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.goldmansachs.com/
+Login Link: https://www.goldmansachs.com/login
+Login Link: https://www.goldmansachs.com/login/login-gs-message
+Captcha Status: No Captcha Found
+
+Website: https://www.tdbank.com/
+Login Link: https://easyweb.td.com/waw/idp/login.htm?execution=e1s1
+Login Link: https://tdwealth.netxinvestor.com/web/tdwealth/login
+Login Link: https://tdinvestmentservices.netxinvestor.com/nxi/login
+Login Link: https://onlinebanking.tdbank.com/?adobe_mc=MCMID%3D56337300829745232762819678501709999969%7CMCORGID%3DA783776A5245B1E50A490D44%2540AdobeOrg%7CTS%3D1733345816#/authentication/login
+Login Link: https://www.tdfitloan.com/login#!/
+Login Link: https://tdfx.tdbank.com/tdfx/login?adobe_mc=MCMID%3D56337300829745232762819678501709999969%7CMCORGID%3DA783776A5245B1E50A490D44%2540AdobeOrg%7CTS%3D1733345816#/?locale=en_US
+Login Link: https://digitalexpress.tdbank.com/WDDL/login.aspx?ReturnUrl=%2fWDDL%2fDefault.aspx&adobe_mc=MCMID%3D56337300829745232762819678501709999969%7CMCORGID%3DA783776A5245B1E50A490D44%2540AdobeOrg%7CTS%3D1733345816
+Login Link: https://easyweb.td.com/waw/idp/login.htm?execution=e1s1
+Login Link: https://tdwealth.netxinvestor.com/web/tdwealth/login
+Login Link: https://tdinvestmentservices.netxinvestor.com/nxi/login
+Login Link: https://onlinebanking.tdbank.com/?adobe_mc=MCMID%3D56337300829745232762819678501709999969%7CMCORGID%3DA783776A5245B1E50A490D44%2540AdobeOrg%7CTS%3D1733345816#/authentication/login
+Login Link: https://www.tdfitloan.com/login#!/
+Login Link: https://tdfx.tdbank.com/tdfx/login?adobe_mc=MCMID%3D56337300829745232762819678501709999969%7CMCORGID%3DA783776A5245B1E50A490D44%2540AdobeOrg%7CTS%3D1733345816#/?locale=en_US
+Login Link: https://digitalexpress.tdbank.com/WDDL/login.aspx?ReturnUrl=%2fWDDL%2fDefault.aspx&adobe_mc=MCMID%3D56337300829745232762819678501709999969%7CMCORGID%3DA783776A5245B1E50A490D44%2540AdobeOrg%7CTS%3D1733345816
+Login Link: https://onlinebanking.tdbank.com/?adobe_mc=MCMID%3D56337300829745232762819678501709999969%7CMCORGID%3DA783776A5245B1E50A490D44%2540AdobeOrg%7CTS%3D1733345816#/authentication/login
+Login Link: https://onlinebanking.tdbank.com/?adobe_mc=MCMID%3D56337300829745232762819678501709999969%7CMCORGID%3DA783776A5245B1E50A490D44%2540AdobeOrg%7CTS%3D1733345816#/authentication/login/enrollment/signup/selectprofile
+Captcha Status: No Captcha Found
+
+Website: https://www.pnc.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.schwab.com/
+Login Link: https://client.schwab.com/Areas/Access/Login
+Login Link: https://client.schwab.com/Areas/Access/Login?chinese=y
+Login Link: https://intelligent-client.schwab.com/sip/#/login
+Login Link: https://client.schwab.com/Areas/Access/Login?&kc=y&sim=y
+Login Link: https://client.schwab.com/Areas/Access/Login?KC=Y&cgift=y
+Login Link: https://www.schwabplan.com/net2/CMSPages/login/participant.html
+Login Link: https://www.schwab529plan.com/swatpl/auth/loginFormAction.do?tplcb=%2Fswatpl%2Facctmaint%2FacctList.do
+Login Link: https://www.schwablq529.com/swltpl/auth/loginFormAction.do?tplcb=%2Fswltpl%2Facctmaint%2FacctList.do
+Login Link: https://client.schwab.com/Areas/Access/Login?SANC=mie
+Login Link: https://client.schwab.com/Login/SignOn/CustomerCenterLogin.aspx
+Login Link: https://client.schwab.com/Login/SignOn/CustomerCenterLogin.aspx?ReturnUrl=%2fApps%2fService%2fTransferOfAccounts%2f&SessionTimeOut=Y#/getting-started
+Captcha Status: No Captcha Found
+
+Website: https://www.fidelity.com/
+Login Link: https://digital.fidelity.com/prgw/digital/login/full-page
+Login Link: https://digital.fidelity.com/prgw/digital/login/full-page?ccview=logout&AuthRedUrl=https://www.fidelity.com/customer-service/customer-logout
+Login Link: https://digital.fidelity.com/prgw/digital/login/full-page?AuthRedUrl=digital.fidelity.com/ftgw/digital/portfolio/summary
+Login Link: https://digital.fidelity.com/prgw/digital/login/full-page
+Login Link: https://digital.fidelity.com/prgw/digital/login/full-page?ccview=logout&AuthRedUrl=https://www.fidelity.com/customer-service/customer-logout
+Captcha Status: No Captcha Found
+
+Website: https://www.paypal.com/
+Login Link: https://www.paypal.com/signin
+Captcha Status: Captcha Found
+
+Website: https://www.sofi.com/
+Login Link: https://www.sofi.com/login/
+Login Link: https://www.sofi.com/login/
+Login Link: https://www.sofi.com/login/registration/?endpoint=https%3A%2F%2Fwww.sofi.com%2Fwealth%2Fapp%2Fproductselection
+Login Link: https://www.sofi.com/login/registration/?appType=pl
+Login Link: https://www.sofi.com/login/registration/?appType=refi
+Login Link: https://www.sofi.com/login/registration/?appType=inschool
+Login Link: https://www.sofi.com/signup/?sofi_login=true&register=true&endpoint=https://www.sofi.com/my/banking/setup/start
+Captcha Status: No Captcha Found
+
+Website: https://www.robinhood.com/
+Login Link: https://robinhood.com/login/
+Captcha Status: No Captcha Found
+
+Website: https://www.venmo.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.zellepay.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.facebook.com/
+Login Link: https://www.facebook.com/recover/initiate/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNzMzMzQ1ODk4LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D&ars=facebook_login&next
+Login Link: https://www.facebook.com/login/
+Captcha Status: Captcha Found
+
+Website: https://www.instagram.com/
+Captcha Status: Captcha Found
+
+Website: https://www.twitter.com/
+Login Link: https://x.com/login
+Captcha Status: Captcha Found
+
+Website: https://www.linkedin.com/
+Login Link: https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin
+Login Link: https://www.linkedin.com/login
+Captcha Status: No Captcha Found
+
+Website: https://www.tiktok.com/
+Captcha Status: Captcha Found
+
+Website: https://www.snapchat.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.pinterest.com/
+Captcha Status: Captcha Found
+
+Website: https://www.reddit.com/
+Login Link: https://www.reddit.com/login/
+Login Link: https://www.reddit.com/login/
+Captcha Status: Captcha Found
+
+Website: https://www.tumblr.com/
+Captcha Status: Captcha Found
+
+Website: https://www.twitch.tv/
+Captcha Status: Captcha Found
+
+Website: https://www.youtube.com/
+Login Link: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252F%253FthemeRefresh%253D1&hl=en&ec=65620
+Captcha Status: No Captcha Found
+
+Website: https://www.discord.com/
+Login Link: https://discord.com/login
+Login Link: https://discord.com/login
+Captcha Status: No Captcha Found
+
+Website: https://www.whatsapp.com/
+Captcha Status: Captcha Found
+
+Website: https://www.telegram.org/
+Captcha Status: No Captcha Found
+
+Website: https://www.wechat.com/
+Captcha Status: No Captcha Found
+
+Website: https://www.vk.com/
+Captcha Status: Captcha Found
+
+Website: https://www.quora.com/
+Captcha Status: Captcha Found
+
+Website: https://www.flickr.com/
+Login Link: https://www.flickr.com/signin
+Captcha Status: No Captcha Found
+
+Website: https://www.meetup.com/
+Login Link: https://www.meetup.com/login/
+Login Link: https://www.meetup.com/login/
+Captcha Status: No Captcha Found
+
+Website: https://www.nextdoor.com/
+Login Link: https://nextdoor.com/login/?next=%2F
+Captcha Status: Captcha Found
+

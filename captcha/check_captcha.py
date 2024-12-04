@@ -1,133 +1,207 @@
-## a basic program that takes in a webpage, scrapes its content, navigates to the
-## login page, then checks if a captcha is present
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import os
+import time
+import random
 
-## ---------------------------------------------------------------- ##
-
-## imports 
-from selenium import webdriver                  ## to control the browser
-from selenium.webdriver.common.keys import Keys ## to simulate key presses
-from selenium.webdriver.common.by import By     ## to locate elements within a document
-
-## ---------------------------------------------------------------- ##
-
-## helper function
-def write_file(website):
-    ''' writes website and login links to a txt file '''
-
-    with open('./captcha/check_captcha.txt', 'w') as f: ## if running from root
-        f.write(f'{website}\n')         ## website url header
+def write_file(website, login_links, captcha_status):
+    ''' writes website, login links, and captcha status to a txt file '''
+    file_path = os.path.join(os.getcwd(), 'check_captcha_http_only_selenium.txt')  
+    with open(file_path, 'a') as f:  ## append to file
+        f.write(f'Website: {website}\n')  ## website url header
         for link in login_links:
-            f.write(f'{link}\n')        ## links
+            f.write(f'Login Link: {link}\n')  ## links
+        f.write(f'Captcha Status: {captcha_status}\n')  ## Captcha found or not
+        f.write('\n')
 
-## helper function
-def get_login_links(by, value):
-    ''' finds and returns matching login-related links on the web page (where a captcha may be)'''
-
+def get_login_links(driver):
+    ''' Extract login-related links '''
     login_links = []
     login_terms = {'login', 'log in', 'signin', 'sign in'}
-
-    ## get all links
-    links = driver.find_elements(by, value)              
-    if len(links) > 0: print(f'{len(links)} links found')
+    links = driver.find_elements(By.TAG_NAME, 'a')  
     for link in links:
-        url = link.get_attribute('href')                        ## isolate the url
-        if url and any(term in url for term in login_terms):    ## append only login links
+        url = link.get_attribute('href')
+        if url and any(term in url.lower() for term in login_terms):  
             login_links.append(url)
-
     return login_links
 
-## helper function
-def find_login_field(by):
-    ''' finds matching login-related fields on the web page, returns True if found '''
+def check_http_like_content(driver):
+    ''' Checks for CAPTCHA-related HTTP-like content '''
+    captcha_keywords = ['recaptcha', 'captcha', 'hcaptcha']
+    captcha_detected = False
 
-    username_words = {'username', 'accountName', 'loginform', 'userid', 
-                  'user', 'acctName', 'login'}
-    
-    ## look for username- and login-related words on the web page
-    for word in username_words:
-        username = driver.find_elements(by, word)
-        if len(username) > 0:
-            print(f'found login field -- password based authentication detected')
-            return True
-    
-    return False
+    # 1   Inspect <script>  tags for URLs or content
+    scripts = driver.find_elements(By.TAG_NAME, 'script')
+    for script in scripts:
+        script_content = script.get_attribute('outerHTML') or ''
+        if any(keyword in script_content.lower() for keyword in captcha_keywords):
+            print(f"CAPTCHA-related content found in script: {script_content[:100]}...")
+            captcha_detected = True
+            break
 
-## helper function
-def find_captcha(driver):
-    ''' finds matching login-related fields on the web page, returns True if found '''
+    # 2 Inspect window object for CAPTCHA-related variables/functions
+    try:
+        window_content = driver.execute_script("return Object.keys(window);")
+        for keyword in captcha_keywords:
+            if any(keyword in key.lower() for key in window_content):
+                print(f"CAPTCHA-related variable found in `window`: {key}")
+                captcha_detected = True
+                break
+    except Exception as e:
+        print(f"Error inspecting `window` object: {e}")
 
-    captcha_words = {'recaptcha', 'captcha'}
-    
-    ## look for username- and login-related words on the web page
-    for word in captcha_words:
-        ## check if id contains word anywhere within the string
-        captcha = driver.find_elements(By.CSS_SELECTOR, f'[id*={word}]')    
-        if len(captcha) > 0:
-            print(f'found captcha -- captcha authentication detected')
-            return True
-    
-    return False
-
-
-## ---------------------------------------------------------------- ##
+    return captcha_detected
 
 if __name__ == '__main__':
-    ## create a web driver instance (only few browsers are supported)
-    driver = webdriver.Safari()     ## opens a browser window
-    options = webdriver.SafariOptions()
-    options.add_argument('--enable-javascript')
 
-    ## other variables
-    website1 = 'https://www.activision.com/'                 
-    website2 = 'https://www.formula1.com/'      ## broken, since its html structure is weird
-    website3 = 'https://www.python.org'
-    website4 = 'https://www.ebay.com/'
+    driver = webdriver.Chrome()
 
-    ## choose a site for testing
-    website = website4
+    websites = [
+    'https://www.khanacademy.org/',
+    'https://www.edx.org/',
+    'https://www.coursera.org/',
+    'https://www.udemy.com/',
+    'https://www.futurelearn.com/',
+    'https://www.open.edu/',
+    'https://www.classcentral.com/',
+    'https://ocw.mit.edu/',
+    'https://www.saylor.org/',
+    'https://www.w3schools.com/',
+    'https://www.codecademy.com/',
+    'https://www.duolingo.com/',
+    'https://www.hackerrank.com/',
+    'https://www.brainpop.com/',
+    'https://www.memrise.com/',
+    'https://www.nationalgeographic.com/',
+    'https://www.discoveryeducation.com/',
+    'https://www.unicef.org/',
+    'https://www.scientificamerican.com/',
+    'https://www.ted.com/',
+    'https://www.amazon.com/',
+    'https://www.ebay.com/',
+    'https://www.etsy.com/',
+    'https://www.walmart.com/',
+    'https://www.bestbuy.com/',
+    'https://www.target.com/',
+    'https://www.aliexpress.com/',
+    'https://www.homedepot.com/',
+    'https://www.wayfair.com/',
+    'https://www.macys.com/',
+    'https://www.nordstrom.com/',
+    'https://www.costco.com/',
+    'https://www.newegg.com/',
+    'https://www.zappos.com/',
+    'https://www.asos.com/',
+    'https://www.overstock.com/',
+    'https://www.gap.com/',
+    'https://www.shein.com/',
+    'https://www.lululemon.com/',
+    'https://www.shopify.com/',
+    'https://www.wikipedia.org/',
+    'https://www.britannica.com/',
+    'https://www.howstuffworks.com/',
+    'https://www.healthline.com/',
+    'https://www.mayoclinic.org/',
+    'https://www.webmd.com/',
+    'https://www.imdb.com/',
+    'https://www.weather.com/',
+    'https://www.quora.com/',
+    'https://www.stackoverflow.com/',
+    'https://www.snopes.com/',
+    'https://www.dictionary.com/',
+    'https://www.thesaurus.com/',
+    'https://www.space.com/',
+    'https://www.nasa.gov/',
+    'https://www.timeanddate.com/',
+    'https://www.usgs.gov/',
+    'https://www.npr.org/',
+    'https://www.cia.gov/the-world-factbook/',
+    'https://www.history.com/',
+    'https://www.nytimes.com/',
+    'https://www.washingtonpost.com/',
+    'https://www.theguardian.com/',
+    'https://www.bbc.com/news',
+    'https://www.cnn.com/',
+    'https://www.reuters.com/',
+    'https://www.aljazeera.com/',
+    'https://www.nbcnews.com/',
+    'https://www.abcnews.go.com/',
+    'https://www.forbes.com/',
+    'https://www.economist.com/',
+    'https://www.bloomberg.com/',
+    'https://www.nationalgeographic.com/',
+    'https://www.wsj.com/',
+    'https://www.huffpost.com/',
+    'https://www.politico.com/',
+    'https://www.propublica.org/',
+    'https://www.apnews.com/',
+    'https://www.axios.com/',
+    'https://www.vox.com/',
+    'https://www.chase.com/',
+    'https://www.bankofamerica.com/',
+    'https://www.wellsfargo.com/',
+    'https://www.citi.com/',
+    'https://www.usbank.com/',
+    'https://www.capitalone.com/',
+    'https://www.americanexpress.com/',
+    'https://www.discover.com/',
+    'https://www.barclays.com/',
+    'https://www.hsbc.com/',
+    'https://www.goldmansachs.com/',
+    'https://www.tdbank.com/',
+    'https://www.pnc.com/',
+    'https://www.schwab.com/',
+    'https://www.fidelity.com/',
+    'https://www.paypal.com/',
+    'https://www.sofi.com/',
+    'https://www.robinhood.com/',
+    'https://www.venmo.com/',
+    'https://www.zellepay.com/',
+    'https://www.facebook.com/',
+    'https://www.instagram.com/',
+    'https://www.twitter.com/',
+    'https://www.linkedin.com/',
+    'https://www.tiktok.com/',
+    'https://www.snapchat.com/',
+    'https://www.pinterest.com/',
+    'https://www.reddit.com/',
+    'https://www.tumblr.com/',
+    'https://www.twitch.tv/',
+    'https://www.youtube.com/',
+    'https://www.discord.com/',
+    'https://www.whatsapp.com/',
+    'https://www.telegram.org/',
+    'https://www.wechat.com/',
+    'https://www.vk.com/',
+    'https://www.quora.com/',
+    'https://www.flickr.com/',
+    'https://www.meetup.com/',
+    'https://www.nextdoor.com/'
+]
 
-    ## load a website
-    driver.get(website)
-    print(f'url: {driver.current_url}')
+    # Clear file content before running
+    file_path = os.path.join(os.getcwd(), 'check_captcha_http_only_selenium.txt')
+    with open(file_path, 'w') as f:
+        f.write('')  # Clear file
 
+    for website in websites:
+        try:
+            driver.get(website)
+            time.sleep(random.uniform(2, 5))  #delay to mimic human behavior
 
-    ## -- finding links to a login page -- ##
+            login_links = get_login_links(driver)
+            if login_links:
+                driver.get(login_links[0])  # Navigate to the first login link
+                time.sleep(random.uniform(2, 5))  # Delay for page load
 
+            # Check HTTP-like content
+            captcha_detected = check_http_like_content(driver)
+            captcha_status = "Captcha Found" if captcha_detected else "No Captcha Found"
+            print(f"{captcha_status} on {website}")
 
-    ## get all links (by tag name)
-    login_links = get_login_links(By.TAG_NAME, 'a')
-
-    ## get all links (by class name, if tag name did not work)
-    if len(login_links) == 0: login_links = get_login_links(By.CLASS_NAME, 'a')
-    print(f'{len(login_links)} login links found')
-
-
-    ## -- navigating to the login page -- ##
-
-
-    ## click on the first login link
-    if login_links: 
-        login_link = login_links[0]
-        driver.get(login_link)
-        print(f'new url: {driver.current_url}')
-
-
-    ## -- finding a captcha -- ##
-
-    ## check if there's a captcha (by id)
-    captcha_id = find_captcha(driver)
-
-    ## output negative results
-    if not captcha_id:
-        print(f'no captcha detected')
-
-
-    ## -- program exit -- ##
-
-
-    ## close the tab
-    driver.close()
-
-    ## close the window
-    # driver.quit()
-
+            write_file(website, login_links, captcha_status)
+        
+        except Exception as e:
+            print(f"Error processing {website}: {e}")
+    
+    driver.quit()
