@@ -112,10 +112,14 @@ Website: https://www.newegg.com/
 OAuth Not Detected
 
 Website: https://www.zappos.com/
-OAuth Not Detected
+OAuth Detected
+Details:
+  - JavaScript contains OAuth-related variables or logic.
 
 Website: https://www.asos.com/
-OAuth Not Detected
+OAuth Detected
+Details:
+  - JavaScript contains OAuth-related variables or logic.
 
 Website: https://www.overstock.com/
 OAuth Not Detected
@@ -131,10 +135,14 @@ Details:
   - JavaScript contains OAuth-related variables or logic.
 
 Website: https://www.lululemon.com/
-OAuth Not Detected
+OAuth Detected
+Details:
+  - JavaScript contains OAuth-related variables or logic.
 
 Website: https://www.shopify.com/
-OAuth Not Detected
+OAuth Detected
+Details:
+  - JavaScript contains OAuth-related variables or logic.
 
 Website: https://www.wikipedia.org/
 OAuth Not Detected
@@ -397,7 +405,9 @@ Website: https://www.pinterest.com/
 OAuth Not Detected
 
 Website: https://www.reddit.com/
-OAuth Not Detected
+OAuth Detected
+Details:
+  - JavaScript contains OAuth-related variables or logic.
 
 Website: https://www.tumblr.com/
 OAuth Not Detected
@@ -445,5 +455,7 @@ Details:
   - OAuth-related redirect URL: https://appleid.apple.com/auth/authorize?redirect_uri=https%3A%2F%2Fwww.meetup.com%2Fties2%2F&state=returnUri%3Dhttps%253A%252F%252Fwww.meetup.com%252Fhome%253FloginProvider%253Dapple&client_id=com.meetup.web&response_type=code%20id_token&scope=name%20email&response_mode=form_post
 
 Website: https://www.nextdoor.com/
-OAuth Not Detected
+OAuth Detected
+Details:
+  - JavaScript contains OAuth-related variables or logic.
 
