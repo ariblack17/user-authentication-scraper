@@ -1,0 +1,354 @@
+Website: https://www.khanacademy.org/
+FIDO2 Detected: No
+
+Website: https://www.edx.org/
+FIDO2 Detected: No
+
+Website: https://www.coursera.org/
+FIDO2 Detected: Yes
+
+Website: https://www.udemy.com/
+FIDO2 Detected: No
+
+Website: https://www.futurelearn.com/
+FIDO2 Detected: No
+
+Website: https://www.classcentral.com/
+FIDO2 Detected: No
+
+Website: https://ocw.mit.edu/
+FIDO2 Detected: No
+
+Website: https://www.saylor.org/
+FIDO2 Detected: No
+
+Website: https://www.w3schools.com/
+FIDO2 Detected: No
+
+Website: https://www.codecademy.com/
+FIDO2 Detected: No
+
+Website: https://www.duolingo.com/
+FIDO2 Detected: No
+
+Website: https://www.hackerrank.com/
+FIDO2 Detected: No
+
+Website: https://www.brainpop.com/
+FIDO2 Detected: No
+
+Website: https://www.memrise.com/
+FIDO2 Detected: No
+
+Website: https://www.nationalgeographic.com/
+FIDO2 Detected: No
+
+Website: https://www.discoveryeducation.com/
+FIDO2 Detected: No
+
+Website: https://www.unicef.org/
+FIDO2 Detected: No
+
+Website: https://www.scientificamerican.com/
+FIDO2 Detected: No
+
+Website: https://www.ted.com/
+FIDO2 Detected: No
+
+Website: https://www.amazon.com/
+FIDO2 Detected: Yes
+
+Website: https://www.ebay.com/
+FIDO2 Detected: Yes
+
+Website: https://www.etsy.com/
+FIDO2 Detected: No
+
+Website: https://www.walmart.com/
+FIDO2 Detected: No
+
+Website: https://www.bestbuy.com/
+FIDO2 Detected: Yes
+
+Website: https://www.target.com/
+FIDO2 Detected: Yes
+
+Website: https://www.aliexpress.com/
+FIDO2 Detected: No
+
+Website: https://www.homedepot.com/
+FIDO2 Detected: No
+
+Website: https://www.nordstrom.com/
+FIDO2 Detected: No
+
+Website: https://www.costco.com/
+FIDO2 Detected: No
+
+Website: https://www.zappos.com/
+FIDO2 Detected: No
+
+Website: https://www.asos.com/
+FIDO2 Detected: No
+
+Website: https://www.overstock.com/
+FIDO2 Detected: No
+
+Website: https://www.gap.com/
+FIDO2 Detected: No
+
+Website: https://www.shein.com/
+FIDO2 Detected: No
+
+Website: https://www.lululemon.com/
+FIDO2 Detected: No
+
+Website: https://www.shopify.com/
+FIDO2 Detected: Yes
+
+Website: https://www.wikipedia.org/
+FIDO2 Detected: No
+
+Website: https://www.britannica.com/
+FIDO2 Detected: No
+
+Website: https://www.howstuffworks.com/
+FIDO2 Detected: No
+
+Website: https://www.healthline.com/
+FIDO2 Detected: No
+
+Website: https://www.webmd.com/
+FIDO2 Detected: No
+
+Website: https://www.imdb.com/
+FIDO2 Detected: No
+
+Website: https://www.weather.com/
+FIDO2 Detected: No
+
+Website: https://www.quora.com/
+FIDO2 Detected: No
+
+Website: https://www.stackoverflow.com/
+FIDO2 Detected: No
+
+Website: https://www.snopes.com/
+FIDO2 Detected: No
+
+Website: https://www.dictionary.com/
+FIDO2 Detected: No
+
+Website: https://www.thesaurus.com/
+FIDO2 Detected: No
+
+Website: https://www.space.com/
+FIDO2 Detected: No
+
+Website: https://www.nasa.gov/
+FIDO2 Detected: No
+
+Website: https://www.timeanddate.com/
+FIDO2 Detected: No
+
+Website: https://www.cia.gov/the-world-factbook/
+FIDO2 Detected: No
+
+Website: https://www.history.com/
+FIDO2 Detected: No
+
+Website: https://www.washingtonpost.com/
+FIDO2 Detected: No
+
+Website: https://www.theguardian.com/
+FIDO2 Detected: No
+
+Website: https://www.bbc.com/news
+FIDO2 Detected: No
+
+Website: https://www.cnn.com/
+FIDO2 Detected: No
+
+Website: https://www.aljazeera.com/
+FIDO2 Detected: No
+
+Website: https://www.nbcnews.com/
+FIDO2 Detected: No
+
+Website: https://www.abcnews.go.com/
+FIDO2 Detected: No
+
+Website: https://www.forbes.com/
+FIDO2 Detected: No
+
+Website: https://www.economist.com/
+FIDO2 Detected: No
+
+Website: https://www.bloomberg.com/
+FIDO2 Detected: No
+
+Website: https://www.nationalgeographic.com/
+FIDO2 Detected: No
+
+Website: https://www.wsj.com/
+FIDO2 Detected: No
+
+Website: https://www.huffpost.com/
+FIDO2 Detected: No
+
+Website: https://www.politico.com/
+FIDO2 Detected: No
+
+Website: https://www.propublica.org/
+FIDO2 Detected: No
+
+Website: https://www.apnews.com/
+FIDO2 Detected: No
+
+Website: https://www.axios.com/
+FIDO2 Detected: No
+
+Website: https://www.vox.com/
+FIDO2 Detected: No
+
+Website: https://www.chase.com/
+FIDO2 Detected: No
+
+Website: https://www.bankofamerica.com/
+FIDO2 Detected: No
+
+Website: https://www.wellsfargo.com/
+FIDO2 Detected: Yes
+
+Website: https://www.citi.com/
+FIDO2 Detected: No
+
+Website: https://www.usbank.com/
+FIDO2 Detected: No
+
+Website: https://www.americanexpress.com/
+FIDO2 Detected: No
+
+Website: https://www.discover.com/
+FIDO2 Detected: No
+
+Website: https://www.barclays.com/
+FIDO2 Detected: No
+
+Website: https://www.hsbc.com/
+FIDO2 Detected: No
+
+Website: https://www.tdbank.com/
+FIDO2 Detected: No
+
+Website: https://www.pnc.com/
+FIDO2 Detected: No
+
+Website: https://www.schwab.com/
+FIDO2 Detected: No
+
+Website: https://www.fidelity.com/
+FIDO2 Detected: No
+
+Website: https://www.paypal.com/
+FIDO2 Detected: Yes
+
+Website: https://www.sofi.com/
+FIDO2 Detected: No
+
+Website: https://www.robinhood.com/
+FIDO2 Detected: No
+
+Website: https://www.zellepay.com/
+FIDO2 Detected: No
+
+Website: https://www.facebook.com/
+FIDO2 Detected: No
+
+Website: https://www.instagram.com/
+FIDO2 Detected: Yes
+
+Website: https://www.twitter.com/
+FIDO2 Detected: Yes
+
+Website: https://www.linkedin.com/
+FIDO2 Detected: No
+
+Website: https://www.tiktok.com/
+FIDO2 Detected: No
+
+Website: https://www.snapchat.com/
+FIDO2 Detected: No
+
+Website: https://www.pinterest.com/
+FIDO2 Detected: No
+
+Website: https://www.reddit.com/
+FIDO2 Detected: No
+
+Website: https://www.tumblr.com/
+FIDO2 Detected: No
+
+Website: https://www.twitch.tv/
+FIDO2 Detected: No
+
+Website: https://www.youtube.com/
+FIDO2 Detected: No
+
+Website: https://www.discord.com/
+FIDO2 Detected: Yes
+
+Website: https://www.whatsapp.com/
+FIDO2 Detected: No
+
+Website: https://www.telegram.org/
+FIDO2 Detected: No
+
+Website: https://www.wechat.com/
+FIDO2 Detected: No
+
+Website: https://www.vk.com/
+FIDO2 Detected: No
+
+Website: https://www.quora.com/
+FIDO2 Detected: No
+
+Website: https://www.flickr.com/
+FIDO2 Detected: No
+
+Website: https://www.meetup.com/
+FIDO2 Detected: No
+
+Website: https://www.nextdoor.com/
+FIDO2 Detected: No
+
+Website: https://www.amazon.com/
+FIDO2 Detected: Yes
+
+Website: https://www.ebay.com/
+FIDO2 Detected: No
+
+Website: https://www.google.com/
+FIDO2 Detected: No
+
+Website: https://www.dropbox.com/
+FIDO2 Detected: Yes
+
+Website: https://www.reddit.com/
+FIDO2 Detected: No
+
+Website: https://www.twitter.com/
+FIDO2 Detected: Yes
+
+Website: https://www.facebook.com/
+FIDO2 Detected: No
+
+Website: https://www.instagram.com/
+FIDO2 Detected: Yes
+
+Website: https://www.linkedin.com/
+FIDO2 Detected: No
+
+Website: https://www.microsoft.com/
+FIDO2 Detected: No
+
