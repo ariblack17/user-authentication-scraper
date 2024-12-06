@@ -322,6 +322,10 @@ FIDO2 Detected: No
 Website: https://www.nextdoor.com/
 FIDO2 Detected: No
 
+
+
+
+##############     These sites are expected to all use FIDO2      ##############
 Website: https://www.amazon.com/
 FIDO2 Detected: Yes
 
